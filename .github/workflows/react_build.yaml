@@ -1,0 +1,25 @@
+# The testing part assumes that i will add frontend test at some point
+name: Build and test react application
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      # Setup environment
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Build and test
+      - run: yarn --frozen-lockfile
+      - run: yarn build
+      # - run: yarn test
