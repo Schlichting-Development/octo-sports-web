@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: "/octo-sports-web/"
+    base: "/octo-sports-web/",
     plugins: [react()]
 })
